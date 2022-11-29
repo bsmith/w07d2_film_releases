@@ -5,7 +5,7 @@ import ReleaseList from "../components/ReleaseList";
 import MoreReleases from "../components/MoreReleases";
 import ReleasesTitle from '../components/ReleasesTitle';
 
-const staticData = [
+const ukFilms = [
     {
         id: 1,
         name: "Spider-Man: Into the Spider-Verse",
@@ -32,21 +32,60 @@ const staticData = [
         url: "https://www.imdb.com/title/tt4154664/?ref_=rlm"
     }
 ];
-const viewMoreLink = "https://www.imdb.com/calendar/?region=gb";
+const frFilms = [
+    {
+        id: 6,
+        name: "Annie colère",
+        url: "https://www.imdb.com/title/tt14778456/?ref_=rlm"
+    },
+    {
+        id: 7,
+        name: "Le torrent",
+        url: "https://www.imdb.com/title/tt17912040/?ref_=rlm"
+    }
+];
+const staticData = {
+    uk: {
+        region: "gb",
+        name: "UK",
+        films: ukFilms
+    },
+    fr: {
+        region: "fr",
+        name: "France",
+        films: frFilms
+    }
+}
+/* XXX: URL escaping */
+const viewMoreLink = region => `https://www.imdb.com/calendar/?region=${region}`;
 
 const ReleaseBox = () => {
-    const [releases, setReleases] = useState(staticData);
+    // const [releases, setReleases] = useState(ukFilms);
+    let [region, setRegion] = useState("uk");
+
+    if (!(region in staticData)) {
+        setRegion("uk");
+        region = "uk";
+    }
+
+    const regionObj = staticData[region];
+    const releases = regionObj.films;
+    const regionNames = Object.fromEntries(
+        Object.entries(staticData).map(([region, data]) => [region, data.name]));
 
     return <aside className="ReleaseBox">
-        {/* TODO: ADD SEPARATE COMPONENT */}
-        <ReleasesTitle />
+        <ReleasesTitle currentRegion={region} regionNames={regionNames} onRegionChange={setRegion} />
         <hr />
+        {/*<button onClick={ (e) => { if (region === "uk") { setRegion("fr") } else { setRegion("uk")}} }>TEST REGION</button>
+        <hr />*/}
 
         <ReleaseList releases={releases} />
 
         <hr />
-        <MoreReleases href={viewMoreLink}/>
+        <MoreReleases href={viewMoreLink(regionObj.region)}/>
     </aside>;
 };
+
+// ReleaseBox.displayName = "Hello!"
 
 export default ReleaseBox;

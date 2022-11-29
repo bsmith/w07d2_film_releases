@@ -28,3 +28,8 @@ a, a:visited {
     text-decoration: none;
     color: var(--link-fg-color);
 }
+
+select {
+    font-size: inherit;
+    color: var(--link-fg-color);
+}
