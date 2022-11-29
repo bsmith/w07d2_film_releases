@@ -1,5 +1,6 @@
 # Film Releases App
 
+![screenshot.png](screenshot.png)
 ![diagram.png](diagram.png)
 
 ## React App
