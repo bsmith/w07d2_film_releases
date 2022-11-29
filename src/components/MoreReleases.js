@@ -1,3 +1,5 @@
+import './MoreReleases.css';
+
 const MoreReleases = ({href}) => {
     return <>
         <a className="MoreReleases"

@@ -40,9 +40,11 @@ const ReleaseBox = () => {
     return <aside className="ReleaseBox">
         {/* TODO: ADD SEPARATE COMPONENT */}
         <ReleasesTitle />
+        <hr />
 
         <ReleaseList releases={releases} />
 
+        <hr />
         <MoreReleases href={viewMoreLink}/>
     </aside>;
 };

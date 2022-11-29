@@ -1,4 +1,18 @@
-.App {
-  text-align: center;
+.App-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 4rem;
+    padding: 4px 16px;
+    margin-bottom: 32px;
+    background-color: black;
+    color: white;
 }
 
+.App-header > h1 {
+    background-color: var(--logo-color);
+    color: black;
+    border-radius: 4px;
+}

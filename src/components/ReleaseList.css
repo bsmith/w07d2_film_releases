@@ -1,2 +1,3 @@
-.ReleaseList {
+.ReleaseList > li {
+    margin-bottom: 1rem;
 }

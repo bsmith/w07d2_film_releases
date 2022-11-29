@@ -1,0 +1,7 @@
+a.MoreReleases {
+    display: flex;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: var(--link-bg-color);
+    color: var(--link-fg-color);
+}
