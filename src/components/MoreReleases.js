@@ -1,5 +1,8 @@
-const MoreReleases = () => {
-    return <p>MoreReleases</p>;
+const MoreReleases = (href) => {
+    return <>
+        <a className="MoreReleases"
+            href={href}>View more upcoming releases &gt;&gt;</a>
+    </>
 }
 
 export default MoreReleases;

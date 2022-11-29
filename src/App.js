@@ -4,7 +4,7 @@ import ReleaseBox from './containers/ReleaseBox';
 
 function App() {
     return <>
-        <h1>Film Releases App</h1>
+        <h1>Popular Internet Film Database</h1>
 
         <ReleaseBox />
     </>;
