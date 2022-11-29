@@ -4,4 +4,5 @@ a.MoreReleases {
     text-decoration: none;
     background-color: var(--link-bg-color);
     color: var(--link-fg-color);
+    border: 2px solid black;
 }

@@ -57,7 +57,12 @@ const staticData = {
     }
 }
 /* XXX: URL escaping */
-const viewMoreLink = region => `https://www.imdb.com/calendar/?region=${region}`;
+const viewMoreLink = region => `https://www.imdb.com/calendar/?region=${encodeURIComponent(region)}`;
+
+/* Map over the entries() pairs of an Object returning an Object */
+const mapEntries = (obj, func) => {
+    return Object.fromEntries(Object.entries(obj).map(func))
+}
 
 const ReleaseBox = () => {
     // const [releases, setReleases] = useState(ukFilms);
@@ -70,8 +75,7 @@ const ReleaseBox = () => {
 
     const regionObj = staticData[region];
     const releases = regionObj.films;
-    const regionNames = Object.fromEntries(
-        Object.entries(staticData).map(([region, data]) => [region, data.name]));
+    const regionNames = mapEntries(staticData, ([region, data]) => [region, data.name]);
 
     return <aside className="ReleaseBox">
         <ReleasesTitle currentRegion={region} regionNames={regionNames} onRegionChange={setRegion} />
