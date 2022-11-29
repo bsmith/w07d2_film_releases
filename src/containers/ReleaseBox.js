@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './ReleaseBox.css';
 import ReleaseList from "../components/ReleaseList";
 import MoreReleases from "../components/MoreReleases";
+import ReleasesTitle from '../components/ReleasesTitle';
 
 const staticData = [
     {
@@ -22,7 +23,8 @@ const staticData = [
     },
     {
         id: 4,
-        name: "The Lego Movie 2: The Second Part", url: "https://www.imdb.com/title/tt3513498/?ref_=rlm"
+        name: "The Lego Movie 2: The Second Part",
+        url: "https://www.imdb.com/title/tt3513498/?ref_=rlm"
     },
     {
         id: 5,
@@ -37,7 +39,7 @@ const ReleaseBox = () => {
 
     return <aside className="ReleaseBox">
         {/* TODO: ADD SEPARATE COMPONENT */}
-        <h2>Upcoming Film Releases for UK</h2>
+        <ReleasesTitle />
 
         <ReleaseList releases={releases} />
 
