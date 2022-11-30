@@ -32,4 +32,20 @@ a, a:visited {
 select {
     font-size: inherit;
     color: var(--link-fg-color);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
 }
+.select-wrap::after {
+    position: relative;
+    left: -1.6rem;
+    content: "⬇︎";
+    width: 0;
+    pointer-events: none;
+}
+.select-wrap {
+    display: inline-flex;
+    border: 1px solid var(--border-color);
+}
+

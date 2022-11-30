@@ -22,7 +22,7 @@ const ReleasesTitle = ({currentRegion, regionNames, onRegionChange}) => {
     const optionNodes = sortedRegions.map(([key, name]) => {
         return <option key={key} value={key}>{name}</option>
     });
-    const selectNode = <select onChange={handleChange} value={currentRegion}>{optionNodes}</select>
+    const selectNode = <span class="select-wrap"><select onChange={handleChange} value={currentRegion}>{optionNodes}</select></span>
 
     return <>
         <h2>Upcoming Film Releases for {selectNode}</h2>
